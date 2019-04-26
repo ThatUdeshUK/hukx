@@ -7,29 +7,29 @@ class huk {
     this._router = router
   }
 
-  get(path, subject) {
-    this._router.get(path, function (req, res) {
+  get(path, subject, ...handlers) {
+    this._router.get(path, handlers, function (req, res) {
       subject.pipe(first()).subscribe(huk.onNext(req, res), huk.onError(res))
       subject.next(req)
     });
   }
 
-  post(path, subject) {
-    this._router.post(path, function (req, res) {
+  post(path, subject, ...handlers) {
+    this._router.post(path, handlers, function (req, res) {
       subject.pipe(first()).subscribe(huk.onNext(req, res), huk.onError(res))
       subject.next(req)
     });
   }
 
-  put(path, subject) {
-    this._router.put(path, function (req, res) {
+  put(path, subject, ...handlers) {
+    this._router.put(path, handlers, function (req, res) {
       subject.pipe(first()).subscribe(huk.onNext(req, res), huk.onError(res))
       subject.next(req)
     });
   }
 
-  delete(path, subject) {
-    this._router.delete(path, function (req, res) {
+  delete(path, subject, ...handlers) {
+    this._router.delete(path, handlers, function (req, res) {
       subject.pipe(first()).subscribe(huk.onNext(req, res), huk.onError(res))
       subject.next(req)
     });
