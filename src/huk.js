@@ -8,19 +8,19 @@ class huk {
   }
 
   get(path, ...handlers) {
-    this._router.get(path, handlers);
+    this._router.get(path, handlers)
   }
 
   post(path, ...handlers) {
-    this._router.post(path, handlers);
+    this._router.post(path, handlers)
   }
 
   put(path, ...handlers) {
-    this._router.put(path, handlers);
+    this._router.put(path, handlers)
   }
 
   delete(path, ...handlers) {
-    this._router.delete(path, handlers);
+    this._router.delete(path, handlers)
   }
 
   pipe(...operators) {
@@ -51,10 +51,9 @@ class huk {
   static onError(res) {
     return (err) => {
       if (err.status) {
-        console.error(err)
         res.status(err.status).send(err.body)
       } else {
-        console.log(err)
+        res.status(500)
       }
     }
   }
@@ -64,4 +63,4 @@ function createHuk(router) {
   return new huk(router)
 }
 
-exports = module.exports = createHuk;
+exports = module.exports = createHuk
