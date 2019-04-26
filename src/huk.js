@@ -7,32 +7,35 @@ class huk {
     this._router = router
   }
 
-  get(path, subject, ...handlers) {
-    this._router.get(path, handlers, function (req, res) {
-      subject.pipe(first()).subscribe(huk.onNext(req, res), huk.onError(res))
-      subject.next(req)
-    });
+  get(path, ...handlers) {
+    this._router.get(path, handlers);
   }
 
-  post(path, subject, ...handlers) {
-    this._router.post(path, handlers, function (req, res) {
-      subject.pipe(first()).subscribe(huk.onNext(req, res), huk.onError(res))
-      subject.next(req)
-    });
+  post(path, ...handlers) {
+    this._router.post(path, handlers);
   }
 
-  put(path, subject, ...handlers) {
-    this._router.put(path, handlers, function (req, res) {
-      subject.pipe(first()).subscribe(huk.onNext(req, res), huk.onError(res))
-      subject.next(req)
-    });
+  put(path, ...handlers) {
+    this._router.put(path, handlers);
   }
 
-  delete(path, subject, ...handlers) {
-    this._router.delete(path, handlers, function (req, res) {
+  delete(path, ...handlers) {
+    this._router.delete(path, handlers);
+  }
+
+  pipe(...operators) {
+    const subject = new Subject().pipe(...operators)
+    return function (req, res) {
       subject.pipe(first()).subscribe(huk.onNext(req, res), huk.onError(res))
       subject.next(req)
-    });
+    }
+  }
+
+  error(status, body) {
+    return {
+      status: status,
+      body: body
+    }
   }
 
   static onNext(req, res) {
@@ -53,17 +56,6 @@ class huk {
       } else {
         console.log(err)
       }
-    }
-  }
-
-  create() {
-    return new Subject()
-  }
-
-  error(status, body) {
-    return {
-      status: status,
-      body: body
     }
   }
 }
