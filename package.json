@@ -1,7 +1,6 @@
 {
   "name": "huk",
   "version": "0.0.1b",
-  "private": true,
   "main": "./src/index.js",
   "scripts": {
     "lint": "eslint src/**/*.js"
