@@ -1,3 +1,3 @@
 'use strict';
 
-module.exports = require('./src/huk');
+module.exports = require('./src/hukx');

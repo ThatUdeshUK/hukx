@@ -1,7 +1,7 @@
 const { Subject } = require('rxjs')
 const { first } = require('rxjs/operators')
 
-class huk {
+class hukx {
 
   constructor(router) {
     this._router = router
@@ -26,7 +26,7 @@ class huk {
   pipe(...operators) {
     const subject = new Subject().pipe(...operators)
     return function (req, res) {
-      subject.pipe(first()).subscribe(huk.onNext(req, res), huk.onError(res))
+      subject.pipe(first()).subscribe(hukx.onNext(req, res), hukx.onError(res))
       subject.next(req)
     }
   }
@@ -59,8 +59,8 @@ class huk {
   }
 }
 
-function createHuk(router) {
-  return new huk(router)
+function createHukx(router) {
+  return new hukx(router)
 }
 
-exports = module.exports = createHuk
+exports = module.exports = createHukx
