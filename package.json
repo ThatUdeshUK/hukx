@@ -7,6 +7,7 @@
     "lint": "eslint src/**/*.js"
   },
   "dependencies": {
+    "express": "^4.16.4",
     "rxjs": "^6.5.1"
   },
   "devDependencies": {
@@ -15,6 +16,7 @@
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-node": "^8.0.1",
     "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-standard": "^4.0.0"
+    "eslint-plugin-standard": "^4.0.0",
+    "typescript": "^3.4.5"
   }
 }
