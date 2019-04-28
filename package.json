@@ -2,8 +2,20 @@
   "name": "hukx",
   "description": "Piper for Node.js express apps.",
   "version": "0.0.1-dev.0",
-  "main": "./src/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UdeshUK/hukx.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "routing"
+  ],
+  "author": "Udesh Kumarasignhe <mail@udesh.xyz>",
   "scripts": {
+    "build": "tsc",
     "lint": "eslint src/**/*.js"
   },
   "dependencies": {
@@ -11,6 +23,7 @@
     "rxjs": "^6.5.1"
   },
   "devDependencies": {
+    "@types/express": "^4.16.1",
     "eslint": "^5.13.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.16.0",
