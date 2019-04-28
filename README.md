@@ -4,12 +4,32 @@
 
 Piper for Node.js express apps.
 
-Author
-------
+## Installation 
+```sh
+npm i hukx --save
+```
+
+## Usage
+### Javascript
+```javascript
+// Import express and instanciate router
+const express = require('express')
+const router = express.Router()
+
+// Import hukx and create a instance
+const { hukx, piperOf } = require('hukx')
+const piper = piperOf(router)
+
+// Define a route with a pipe
+piper.get('/', hukx.pipe(
+  ... // Rxjs operators
+))
+```
+
+## Author
 Udesh Kumarasinghe - [UdeshUK][1] on GitHub, [ThatUdeshUK][2] on Twitter
 
-License
--------
+## License
 Apache 2.0. See the [LICENSE][3] file for details.
 
 [1]: https://github.com/UdeshUK
