@@ -24,6 +24,9 @@ const piper = piperOf(router)
 piper.get('/', hukx.pipe(
   ... // Rxjs operators
 ))
+
+// Export router
+module.exports = router
 ```
 
 ## Author
