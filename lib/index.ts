@@ -48,7 +48,7 @@ export class hukx {
 
   private static onNext(req: express.Request, res: express.Response) {
     return (water: any) => {
-      if (typeof (water) == typeof (req)) {
+      if (typeof (water) != typeof (req)) {
         res.status(200).send(water)
       } else {
         res.status(200)
