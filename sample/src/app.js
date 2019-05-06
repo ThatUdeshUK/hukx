@@ -2,6 +2,7 @@ var express = require('express')
 var logger = require('morgan')
 
 var hello = require('./routes/hello')
+var echo = require('./routes/echo')
 
 var app = express()
 
